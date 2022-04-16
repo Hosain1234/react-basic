@@ -6,6 +6,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>JSX</h1>
+        {/* <h3>To include emmet in react file go to setting then emmet then lenguage and add language as told</h3> */}
+        <div className="container">
+          <h3>Hello Dude React </h3>
+        </div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
