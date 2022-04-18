@@ -1,30 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
 
+const name = "Abdullah Al Hosain";
+
 function App() {
+  const nayoks = ['Rubel', 'hero-alom', 'Bapparaj', 'omorsani', 'sakibkhan'];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>JSX</h1>
-        {/* <h3>To include emmet in react file go to setting then emmet then lenguage and add language as told</h3> */}
-        <div className="container">
-          <h3>Hello Dude React </h3>
-        </div>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        nayoks.map(singleNayok => <li>{singleNayok}</li>)
+      }
+      {
+        nayoks.map(<person name={nayoks[4]}></person>)
+      }
+      <Person name={nayoks[0]}></Person>
+      <Person name={nayoks[2]}></Person>
+      <Friend name="Asad" profession="Magician"></Friend>
+      <Person></Person>
+      <Person></Person>
     </div>
   );
+}
+
+function Person(props) {
+  console.log(props);
+  return (
+    <div className='person'>
+      <h1>Name: {props.name}</h1>
+      <h3>Profession: Student </h3>
+    </div>
+  );
+}
+
+function Friend (friend) {
+  return (
+    <div className="person">
+      <h1>My friend is {friend.name}</h1>
+      <p>He is a {friend.profession}</p>
+    </div>
+  )
 }
 
 export default App;
